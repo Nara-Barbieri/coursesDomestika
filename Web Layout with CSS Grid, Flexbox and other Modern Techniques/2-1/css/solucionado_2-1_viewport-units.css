@@ -4,6 +4,8 @@
   display: flex;
 }
 
+/* vh: Unidad relativa a la altura del viewport (normalmente, la ventana del navegador, pero podría ser un iframe). 
+  100vh equivale al 100% de la altura del viewport. */
 .cabecera__bloque1 {
   height: 100vh;
   width: 50%;
@@ -21,6 +23,9 @@
   text-align: center;
 }
 
+/* vw: Unidad relativa a la anchura del viewport. 
+  100vw equivale al 100% de la anchura del viewport. 
+  Es recomendable evitar aplicar un 100vw a un elemento (o combinación de elementos) porque la posición lateral de la barra de scroll en función del sistema operativo podría provocar un poco de scroll horizontal en la página. */
 h1 {
   font-size: 5vw;
 }
@@ -32,7 +37,7 @@ h1 {
 }
 
 
-/* Correcciones para pantallas por debajo de 600px */
+/* Media query: Correcciones para pantallas por debajo de 600px */
 
 @media (max-width: 37.5em) {
   .cabecera {
@@ -40,13 +45,13 @@ h1 {
   }
 
   .cabecera__bloque1 {
-    width: 100%;
     height: 50vh;
+    width: 100%;
   }
 
   .cabecera__bloque2 {
-    width: 100%;
     height: auto;
+    width: 100%;
     padding: 3em;
   }
 }
