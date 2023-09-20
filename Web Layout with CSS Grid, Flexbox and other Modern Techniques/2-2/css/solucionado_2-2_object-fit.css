@@ -10,12 +10,18 @@
   width: 50%;
 }
 
+/* object-fit: …;
+La propiedad object-fit se aplica a una imagen de contenido para indicar cómo se redimensiona respecto a su contenedor, cuando dicha imagen tiene un tamaño relativo a dicho contenedor (ejemplo: width: 100% y height: 100%).
+  object-fit: cover;
+  La imagen de contenido mantiene sus relación de aspecto (no se deforma) y cubre completamente el contenedor, aunque quede alguna parte cortada. [Ver más abajo]*/
 .cabecera__bloque1 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center top;
 }
+/*object-position: …;
+Define cómo debe alinearse respecto al contenedor una imagen que tenga objectfit. Funciona de manera equivalente a background-position, admitiendo dos valores (alineación horizontal y vertical) que pueden ser palabras (left/right/top/bottom) o unidades relativas (como %) o absolutas (como px).*/
 
 .cabecera__bloque2 {
   height: 100vh;
@@ -75,3 +81,16 @@ img {
     align-items: center;
   }
 }
+
+/*  object-fit: contain;
+La imagen de contenido mantiene sus relación de aspecto (no se deforma) y se
+muestra completamente, aunque queden partes del contenedor sin cubrir.
+    object-fit: fill;
+La imagen de contenido cubre todo el contenedor y se muestra completa,
+deformándose si es necesario.
+    object-fit: none;
+Cancela la propiedad object-fit, para los casos en los sea necesario devolver la
+imagen a su visualización original.
+    object-fit: scale-down;
+Funciona como un object-fit: none o un object-fit: contain, en función de
+cuál dé como resultado un tamaño de imagen más pequeño.*/
