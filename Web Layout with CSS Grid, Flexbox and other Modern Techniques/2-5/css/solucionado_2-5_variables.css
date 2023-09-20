@@ -1,0 +1,35 @@
+/*   :root{ … }
+El selector :root equivale a la etiqueta html, y se utiliza habitualmente para establecer variables globales. La única diferencia entre :root {} y html {} es que el primero tiene mayor especificidad.*/
+:root {
+  --color: #00acac;
+}
+/*   --nombreVariable: …;
+Las variables CSS se declaran dentro de una declaración CSS normal (como una propiedad más) y se escriben prefijadas de un doble guion y con un sistema de nomenclatura equivalente al de las clases. (sin caracteres especiales ni espacios)*/
+
+/*   propiedad: var(—nombreVariable);
+Para asignar como valor una variable previamente declarada, englobaremos esta propiedad en la función var(). Adicionalmente, podemos asignar también como argumento un valor alternativo, separado por una coma, para el caso en el que la variable no tuviera un valor asignado.*/
+
+@media (max-width: 37.5em) {
+  :root {
+    --color: #e56ada;
+  }
+}
+
+.cabecera {
+  background: var(--color);
+}
+
+.articulo__entradilla {
+  color: var(--color);
+}
+
+.articulo__cuerpo > p:first-child::first-letter {
+  color: var(--color);
+}
+
+/* A priori, la variable '--color' que hemos declarado en ':root' se puede sobrescribir en una declaración de una regla selectora específica. En este caso, este nuevo valor de variable solo se aplicará a los elementos de este selector a nivel local.*/
+.imagen-circulo,
+.imagen-hexagono {
+  --color: #d58252;
+  background: var(--color);
+}
