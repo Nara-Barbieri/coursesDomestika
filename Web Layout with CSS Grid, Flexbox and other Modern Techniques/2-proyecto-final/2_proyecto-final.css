@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+:root {
+  --color: #D97708;
+}
+
+@media (max-width: 37.5em) {
+  :root {
+    --color: #899fe1;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,6 +31,7 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 @media (max-width: 37.5rem) {
@@ -49,8 +60,8 @@ p {
 }
 
 .cabecera {
-  background: linear-gradient(38deg, #D97708, #FEF7A4);
-  color: #333333;
+  background: linear-gradient(38deg, var(--color), #FEF7A4);
+  color: #fafafa;
   display: flex;
   position: relative;
 }
@@ -111,9 +122,14 @@ p {
 }
 
 .articulo {
-  max-width: 90vw;
+  max-width: 70vw;
   margin: 3em auto;
   padding: 0 1em;
+}
+
+.articulo p {
+  text-align: justify;
+  hyphens: auto;
 }
 
 .articulo__entradilla {
@@ -124,9 +140,7 @@ p {
   font-weight: 600;
   font-size: 115%;
   line-height: 1.7;
-  color: #D97708;
-  text-align: justify;
-  hyphens: auto;
+  color: var(--color);
 }
 
 .articulo__entradilla > p {
@@ -134,11 +148,12 @@ p {
 }
 
 .articulo__cuerpo {
-  max-width: 34em;
+  max-width: 80vw;
   margin: auto;
 }
+
 .articulo__cuerpo > p:first-child::first-letter {
-  color: #D97708;
+  color: var(--color);
   font-size: 500%;
   font-weight: 600;
   line-height: 0.75;
@@ -160,34 +175,33 @@ p {
 
 .imagen-circulo {
   border-radius: 50%;
-  width: 50vw;
-  height: 50vw;
+  width: 30vw;
+  height: 30vw;
   float: right;
   margin-right: -20vw;
+  margin-left: 2em;
   background: #004e92;
   shape-outside: circle(50%) border-box;
-  shape-margin: 3em;
+  shape-margin: 1em;
 }
 
 .imagen-circulo img {
   display: block;
   border-radius: 50%;
-  mix-blend-mode: hard-light;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .imagen-octagon {
-  width: 50vw;
-  height: 30vw;
+  width: 30vw;
+  height: 20vw;
   float: left;
   background: #004e92;
-  margin-left: -20vw;
-  margin-right: 1em;
+  margin: 1em 1em 1em -20vw;
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   shape-outside: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%) border-box;
-  shape-margin: 3em;
+  shape-margin: 1em;
 }
 
 .imagen-octagon img {
@@ -201,12 +215,28 @@ p {
 
 @media (max-width: 37.5rem) {
   .imagen-circulo {
+    width: 60vw;
+    height: 60vw;
     margin: 1em auto;
     float: none;
   }
 
   .imagen-octagon {
+    width: 60vw;
+    height: 40vw;
     margin: 1em auto;
     float: none;
   }
+}
+
+footer {
+  max-width: 80vw;
+  margin: 2em auto;
+  background-color: var(--color);
+  color: #fafafa;
+  padding: 1em;
+}
+
+a {
+  color: #fafafa;
 }
