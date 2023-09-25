@@ -1,0 +1,36 @@
+/* display: flex;
+Propiedad que permite crear un espacio flex. Esta propiedad se aplica a un elemento contenedor, y los hijos directos de dicho contenedor se alinearán siguiendo las propiedades de flexbox */
+/* flex-direction: …;
+Propiedad de contenedor que indica la dirección del eje principal a partir del cual se alinearán los elementos. Los valores pueden ser row (fila, por defecto), column (columna), row-reverse (fila inversa) o column-reverse (columna inversa). */
+/* justify-content: …;
+Propiedad de contenedor que permite alinear el contenido en el eje principal, con el valor por defecto flex-start (al inicio del eje principal) y los valores flex-end (al final del eje principal), center (centrado), space-between (repartiendo el espacio sobrante de manera proporcional entre elementos) o space-around (similar a space-between, pero incluyendo el principio y el final de la caja). Esta propiedad se amplió después con el valor space-evenly, que distribuye el contenido de una manera similar a space-around, pero asegurándose de que queda el mismo espacio entre elementos que al principio y al final del grupo. */
+/* flex-wrap: …;
+Propiedad de contenedor que permite indicar a un espacio flex si tiene que realizar un
+salto de línea cuando el contenido no tiene espacio suficiente para mostrarse. El valor
+por defecto es nowrap (no realizar el salto), y podemos indicar wrap (salto de línea) y
+wrap-reverse (salto invertido). */
+.contenedor {
+  padding: 4em 2em;
+  display: flex;
+  border: 2px solid white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.explorador {
+  background-color: rgba(250, 250, 250, 0.8);
+  margin: .5em;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+body {
+  background: linear-gradient(38deg, #000428, #004e92);
+}
