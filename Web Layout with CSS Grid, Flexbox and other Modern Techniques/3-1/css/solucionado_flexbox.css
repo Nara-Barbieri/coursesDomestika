@@ -5,23 +5,25 @@ Propiedad de contenedor que indica la dirección del eje principal a partir del 
 /* justify-content: …;
 Propiedad de contenedor que permite alinear el contenido en el eje principal, con el valor por defecto flex-start (al inicio del eje principal) y los valores flex-end (al final del eje principal), center (centrado), space-between (repartiendo el espacio sobrante de manera proporcional entre elementos) o space-around (similar a space-between, pero incluyendo el principio y el final de la caja). Esta propiedad se amplió después con el valor space-evenly, que distribuye el contenido de una manera similar a space-around, pero asegurándose de que queda el mismo espacio entre elementos que al principio y al final del grupo. */
 /* flex-wrap: …;
-Propiedad de contenedor que permite indicar a un espacio flex si tiene que realizar un
-salto de línea cuando el contenido no tiene espacio suficiente para mostrarse. El valor
-por defecto es nowrap (no realizar el salto), y podemos indicar wrap (salto de línea) y
-wrap-reverse (salto invertido). */
+Propiedad de contenedor que permite indicar a un espacio flex si tiene que realizar un salto de línea cuando el contenido no tiene espacio suficiente para mostrarse. El valor por defecto es nowrap (no realizar el salto), y podemos indicar wrap (salto de línea) y wrap-reverse (salto invertido). */
 .contenedor {
   padding: 4em 2em;
   display: flex;
   border: 2px solid white;
-  flex-direction: row;
+  /*flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;*/
 }
+/* align-items: …;
+Propiedad de contenedor que permite alinear el contenido en el eje cruzado, con el valor por defecto stretch (estirar) y los valores flex-start (inicio del eje cruzado), flex-end (final de eje cruzado), center (centrado) y baseline (alineado con la línea base del texto).Stretch es el único valor para la propiedad align-items que garantiza que todos los elementos tengan el mismo tamaño en el eje transversal (alto para row, ancho para column).*/
 
 .explorador {
+  box-sizing: border-box;
   background-color: rgba(250, 250, 250, 0.8);
   margin: .5em;
-  padding: 2em;
+  padding: 1em;
   border-radius: 10px;
   text-align: center;
   color: #004e92;
@@ -30,6 +32,75 @@ wrap-reverse (salto invertido). */
   font-size: 1.2em;
   line-height: 1.4;
 }
+
+/*flex-grow: …;
+Propiedad de elemento que permite indicarle si debe expandirse para ocupar el espacio sobrante. Por defecto es 0 (no expandirse), pero cualquier valor positivo asignará una proporción de reparto del espacio sobrante (si todos los elementos tienen 1, lo reparten proporcionalmente, y si uno tiene un 2, cogerá el doble de espacio sobrante).*/
+/* flex-shrink: …;
+Propiedad de elemento, equivalente a flex-grow, que permite indicar una proporción de reducción de un elemento cuando no tiene suficiente espacio. Por defecto es 1 (se reduce proporcionalmente), pero podemos dar un valor mayor para que reduzca más o un valor de 0 para que no reduzca.*/
+
+/* REMOVE '/*---' TO RUN THE FLEX-GROW/SHRINK CODE! */
+/*---.exp1{
+  flex-grow: 2; /* aumenta al doble de la tasa de crecimiento de .exp2*/
+/*---  flex-shrink: 0; /* no se reduce por debajo de su tamaño estándar*/
+/*---}
+/* Este elemento tendrá como mínimo el tamaño estándar, pero podrá aumentar.*/
+
+/*---.exp2{
+  flex-grow: 1; /* aumenta con la mitad de la tasa de crecimiento de .exp1*/
+/*---  flex-shrink: 1; /*default*/ /* reduce con la mitad de la tasa de reducción de .exp3*/
+/*---}
+/* Este elemento puede aumentar o disminuir, sin definir un tamaño estándar.*/
+
+/*---.exp3{
+  flex-grow: 0; /*default*/ /* no crece más allá de su tamaño estándar*/
+/*---  flex-shrink: 2; /* reduce al doble de la tasa de reducción de .exp2*/
+/*---}
+/* Este iten tendrá el tamaño predeterminado como máximo, pero podrá reducirse.*/
+
+/* Para observar mejor los efectos, edite el archivo .html para que los elementos de clase exp1, exp2 y exp3 tengan el mismo texto en el contenido. e.g."xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx"*/
+
+/* Active el zoom+/zoom- del navegador para observar mejor el efecto de "shrink" e de "grow".*/
+
+/* flex-basis: …;
+Propiedad de elemento que le permite establecer una anchura ideal (similar a un min-width, si 'flex-direction: row') si no hay otros elementos condicionantes. (Si es "flex-direction: column", la propiedad flex-basis será relativa a la altura de los itens).
+.exp2 {
+  flex-basis: 500px;
+} */
+
+/* Si los valores de flex-grow y flex-shrink se establecen en 0, la renderización definirá, sin acomodación, el elemento con el tamaño definido por flex-basis: 
+.exp2 {
+  flex-basis: 500px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}*/
+
+/* flex: …;
+Forma reducida de escribir las propiedades flex-grow, flex-shrink y
+flex-basis, en ese orden y separados por espacios.
+Ejemplo:
+flex: 1 0 200px; */
+
+/* order: …;
+Propiedad de elemento que permite cambiar el orden en el que se muestra. Por defecto, todos los elementos tienen un order de 0, por lo que cualquier valor negativo hará que un elemento aparezca antes que los demás, y si es positivo, después. En caso de conflicto (dos o más itens con el mismo valor de orden distinto de 0), prevalecerá el orden definida en el documento html.
+ 
+/* REMOVE '/*+' TO RUN THE ORDER CODE! */ 
+/*+.exp3 {
+  order: -2; /* será el primero*/
+/*+}
+
+.exp4 {
+  order: -2; /* será el segundo*/
+/*+}
+
+.exp1 {
+  order: 1; /* será el penúltimo*/
+/*+}
+
+.exp5 {
+  order: 1; /* será el último*/
+/*+}
+
+Como el cambio es exclusivo del estilo CSS, el orden de los elementos, para selección o para lectores de pantalla, se mantendrá tal como se define en el archivo html. */
 
 body {
   background: linear-gradient(38deg, #000428, #004e92);
