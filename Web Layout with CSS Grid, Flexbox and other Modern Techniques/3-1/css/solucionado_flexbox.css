@@ -10,14 +10,20 @@ Propiedad de contenedor que permite indicar a un espacio flex si tiene que reali
   padding: 4em 2em;
   display: flex;
   border: 2px solid white;
+  height: 50vh;
+  align-items: center;
   /*flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
-  min-height: 100vh;*/
+  align-items: stretch;*/
 }
 /* align-items: …;
 Propiedad de contenedor que permite alinear el contenido en el eje cruzado, con el valor por defecto stretch (estirar) y los valores flex-start (inicio del eje cruzado), flex-end (final de eje cruzado), center (centrado) y baseline (alineado con la línea base del texto).Stretch es el único valor para la propiedad align-items que garantiza que todos los elementos tengan el mismo tamaño en el eje transversal (alto para row, ancho para column).*/
+
+/* align-content: …;
+Propiedad de contenedor que permite alinear el contenido en el eje cruzado cuando hay más de una línea, con el valor por defecto stretch (estirar) y los valores flexstart (inicio del eje cruzado), flex-end (final de eje cruzado), center (centrado) y space-between (espacio entre medio) y space-around (espacio a los lados).
+Esta propiedad solo funciona cuando se declara 'flex-wrap: wrap;'. para que el flex-container y los elementos ocupen realmente más de una fila (cuando flex-direction: row;) o columna (cuando flex-direction: column;).*/
 
 .explorador {
   box-sizing: border-box;
@@ -101,6 +107,23 @@ Propiedad de elemento que permite cambiar el orden en el que se muestra. Por def
 /*+}
 
 Como el cambio es exclusivo del estilo CSS, el orden de los elementos, para selección o para lectores de pantalla, se mantendrá tal como se define en el archivo html. */
+
+/* align-self: …;
+Propiedad de elemento que permite cambiar la alineación de un elemento en el eje cruzado, con el valor por defecto auto (el que venga dado por el contenedor) y los valores flex-start (inicio del eje cruzado), flex-end (final de eje cruzado), center (centrado), baseline (alineado con la línea base del texto) y stretch (estirado). Esta propiedad solo se puede declarar en flex-itens, independientemente de si es un selector para un solo elemento (por ejemplo, .exp1) o varios elementos (por ejemplo, .explorer). Esta propiedad no funcionará si se declara para un flex-container (ex: .contenedor). 
+.exp3 {
+  align-self: flex-start;
+} */
+
+/* ESTRATEGIA DE DISPOSICIONES A LO LARGO DEL EJE PRINCIPAL NO CONSIDERADA POR JUSTIFY-CONTENT
+Dentro de un flex-container, a través de selectores para flex-itens, el comando 'margin: auto' (y las especificaciones de -left -right -top y -bottom) funcionan satisfactoriamente para alineaciones verticales y horizontales.
+.contenedor {
+  justify-content: flex-end;
+}
+
+.explorador {
+   margin-left: auto;
+}
+Este código permitirá elementos alineados a la derecha, con una distribución de márgenes a la izquierda que ninguna opción de justify-content permitiría. */
 
 body {
   background: linear-gradient(38deg, #000428, #004e92);
