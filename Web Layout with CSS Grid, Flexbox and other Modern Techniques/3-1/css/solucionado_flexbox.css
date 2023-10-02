@@ -1,5 +1,5 @@
 /* display: flex;
-Propiedad que permite crear un espacio flex. Esta propiedad se aplica a un elemento contenedor, y los hijos directos de dicho contenedor se alinearán siguiendo las propiedades de flexbox */
+Propiedad que permite crear un espacio flex. Esta propiedad se aplica a un elemento contenedor, y los hijos directos de dicho contenedor se alinearán siguiendo las propiedades de flexbox. Esta propiedad no es heredable y solo se aplica a los hijos directos del elemento. */
 /* flex-direction: …;
 Propiedad de contenedor que indica la dirección del eje principal a partir del cual se alinearán los elementos. Los valores pueden ser row (fila, por defecto), column (columna), row-reverse (fila inversa) o column-reverse (columna inversa). */
 /* justify-content: …;
