@@ -1,0 +1,48 @@
+.contenedor {
+  padding: 1em;
+  display: grid;
+  /* grid-template-columns: 25% 25% 25% 25%; -- La desventaja de definir una plantilla con valores de porcentaje es que, para aumentar la propiedad grid-gap y ultrapasar 100%, se crea una barra de rolagem horizontal. Com a estratégia Fr, o gap é incorporado sem ultrapassar o total (isto é, sem barra de rolagem horizontal). Ejemplo: 
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+  /*  repeat(…, …)
+Función de repetición que se emplea dentro de las propiedades de grid-template para indicar que un número de veces (primer argumento de la función) se repetirá una fila o columna (según dónde la apliquemos) con un tamaño concreto (especificado en el segundo argumento de la función). Ejemplo:
+    repeat(4, 1fr) */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 300px 1fr 200px;
+  grid-gap: 20px;
+}
+
+.elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+/*  display: grid;
+    Propiedad que permite crear un espacio grid. Los espacios grid se dividen en filas (rows) y columnas (columns). Estas filas y columnas reciben el nombre común de tracks. El espacio grid, igual que el espacio flexbox, es la relación entre un elemento contenedor con display: grid y sus elementos "hijos" (descendientes directos). Los descendientes de los descendientes directos no se ven afectados por este tipo de alineación. 
+    grid-template-columns: …;
+    Propiedad que permite declarar específicamente el número de columnas de un grid, de manera equivalente a la que se aplica para grid-template.
+    grid-template-rows: …;
+    Propiedad que permite declarar específicamente el número de filas de un grid, de manera equivalente a la que se aplica para grid-template.
+    grid-template: … … … / … … …;
+    La propiedad grid-template permite declarar el número de filas y columnas que tendrá un grid (separados por el carácter / ). Cada medida separada por un espacio supone una nueva fila o columna respectivamente. Ejemplo:
+    grid-template: 300px 1fr 200px / 200px 3fr 100px 2fr; 
+    grid-gap: … …;
+    Espaciado entre tracks, en un espacio grid. Podemos especificar un valor para las filas y otro para las columnas (separadas por un espacio) o especificar un solo valor para ambos. Ejemplo:
+    grid-gap: 20px; 
+1fr -- Unidad que indica 1 fracción del espacio libre disponible. De esta forma, el espacio libre se dividirá entre las columnas o filas (respectivamente) que tengan esta unidad de medida, y proporcionalmente a la cifra que se les haya dado (1fr, 2fr, etc). 
+Retícula implícita y retícula explícita -- Cuando el contenido supera el número de filas o columnas que hemos planteado en nuestro código (retícula explícita), el espacio grid hace una prolongación de las columnas o filas respectivamente, creando lo que se conoce como retícula implícita.
+    grid-auto-flow: …;
+    Propiedad de retícula que indica cómo deben posicionarse los elementos que no tienen instrucciones específicas de posicionamiento en el grid (y por tanto siguen un posicionamiento natural respecto a su orden en el HTML). El valor row (que tiene por defecto) indica que intente rellenar las filas, y añada nuevas filas si es necesario. El valor column rellenará por columnas, y añadirá nuevas columnas si es necesario. Y el valor dense intenta rellenar todos los huecos disponibles para que quede una retícula compacta.
+        * grid-auto-flow: row; (default) -- estabelece que elementos html del contenedor preenchem o grid por línea. 
+        * grid-auto-flow: column; -- estabelece que elementos html del contenedor preenchem o grid por columna.
+      grid-auto-columns: …;
+      Propiedad que especifica el tamaño que deberían tener las columnas adicionales que se creen en la retícula implícita.
+      grid-auto-rows: …;
+      Propiedad que especifica el tamaño que deberían tener las filas adicionales que se creen en la retícula implícita.*/
+
