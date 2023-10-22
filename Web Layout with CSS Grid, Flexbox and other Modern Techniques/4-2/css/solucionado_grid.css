@@ -1,14 +1,58 @@
 .contenedor {
   padding: 4em 2em;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4,1fr);
   grid-gap: 20px;
+  grid-auto-flow: dense;
 }
   
 .animal {
   border-radius: 10px;
   position: relative;
 }
+
+/*   grid-row-start, grid-row-end, grid-column-start y grid-column-end
+  Propiedades que, en cada caso y de manera concreta, permiten indicar el inicio o elfinal de un elemento, respecto a las filas o las columnas. 
+  Una de las formas de definir los parámetros de inicio y fin de los espacios ocupados por cada elemento es asignarlos a los bordes de las pistas ocupadas. Las columnas están delimitadas por bordes numerados positivamente (1, 2, 3...) de izquierda a derecha o negativamente (-1, -2, -3...) de derecha a izquierda. Ej: en una grilla con 4 columnas, la segunda columna está delimitada por los bordes 2 y 3 o -3 y -4. 
+Lo mismo puede hacerse referencia a líneas, numeradas positivamente, de arriba hacia abajo, o negativamente, de abajo hacia arriba.
+¡Atención! los valores negativos solo son válidos (y verificables mediante inspección) para la grilla explícita mediante la declaración en el .contenedor 'grid-template-columns: ...;  grid-template-rows: ...;'.
+    .zoo1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    } --> En este caso, el primer elemento ocuparía 4 espacios en la grilla: columnas 1-3 y líneas 1-3.
+Tenga en cuenta que, al ser el primer elemento, si se especifica solo
+    .zoo1{
+      grid-column-end: 3;
+    } --> el elemento ocuparía 1 espacio en la grilla: columnas 2-3 y líneas 1-2, dejando la pista de la primera columna vacía (a menos que pueda corregirse cambiando la posición del elemento mediante creación implícita, por ejemplo, declaración 'grid-auto-flow: dense' en el .contenedor).*/
+
+/*   grid-column: … / …;
+  Propiedad que permite indicar a un elemento dónde empieza y acaba respecto a las líneas que marcan las columnas de un grid. Si se indican valores negativos, se empieza a contar desde el final de las líneas de la retícula explícita. Opcionalmente, uno de los dos valores (principio o final) puede ser sustituido por la palabra span seguida de un valor, que indica la extensión del elemento a lo largo de dichas líneas de retícula.
+Ejemplo: grid-column: 3 / span 2;
+    grid-row: … / …;
+  Propiedad equivalente a grid-column, pero en este caso, se indica el principio y final de un elemento respecto a las líneas que marcan las filas del grid.*/
+.zoo1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}/* --> Tiene el mismo resultado que:
+    .zoo1 {
+      grid-column-start: span 2;
+      grid-row-start: span 2;
+    }
+O:
+    .zoo1 {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 1;
+          grid-row-end: 3;
+    } 
+O:
+    .zoo1 {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    }
+*/
 
 .animal_imagen {
   overflow: hidden;
