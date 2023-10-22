@@ -1,0 +1,56 @@
+/*   auto-fit, auto-fill
+  Valores que permiten indicar el comportamiento de las filas o columnas de una retícula en el espacio sobrante. Se suele emplear dentro de la función repeat(). En el caso de auto-fill, grid rellena tantas filas o columnas como quepan, incluso si quedan vacías. En el caso de auto-fit, se hace una distribución similar, pero las filas/columnas vacías se esconden y el espacio sobrante se reparte entre las filas/ columnas que sí tienen contenido. El uso del auto-fit  como parámetro generalmente genera resultados más sólidos. 
+Ejemplo: grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );*/
+.contenedor {
+  padding: 4em 2em;
+  display: grid;
+  /*grid-template-columns: repeat(auto-fill, 300px); --> En este caso, el número de columnas estaría definido por el ancho del navegador, siempre y cuando fuera posible ajustar una nueva columna de 300px. Entonces, si el navegador tiene 500px, tendríamos 1 columna. Si tiene 800px, tendríamos 2 columnas y así sucesivamente.*/
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/*   minmax(…, …)
+  Función de medida empleada en una propiedad grid-template que permite indicar un valor mínimo (primer argumento) y un valor máximo (segundo argumento) para una fila o una columna.
+  Ejemplo: grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) --> En este caso, el número de columnas estaría definido por el ancho del navegador, siempre y cuando fuera posible ajustar una nueva columna de 300px. Sin embargo, las columnas se ajustarían para ocupar siempre todo el ancho del navegador.*/
+  grid-gap: 20px;
+}
+/*   auto, min-content, max-content
+Valores que podemos dar dentro de una propiedad grid-template para dimensionar una fila o columna. El valor min-content hace referencia al tamaño mínimo que puede tener el elemento en dicha fila/columna; el valor max-content, el tamaño máximo que puede ocupar dicho elemento. El valor auto dependerá del resto de contenidos, tomando como punto de partida el valor máximo.
+Ejemplo: grid-template-columns: repeat(auto-fill, minmax(0, max-content)); */
+  
+.animal {
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid white;
+}
+
+.animal_imagen {
+  overflow: hidden;
+  background: linear-gradient(38deg, #000428, #004E92);
+  border-radius: 10px;
+  display: block;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  max-width: 100px;
+}
+
+.animal_nome { 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0.5em;
+  margin: 0;
+  color: #fafafa;
+  font-weight: bold;
+  text-align: center;
+}
+
+.animal_nome a {
+  color: #fafafa;
+}
+
+.animal_nome a:hover {
+  color: #000428;
+}
