@@ -29,16 +29,6 @@ EJE Y --> Reglas align-… Las reglas align se aplican el eje y, y alinean el co
     EJE Y --> align-self: …;
   Reglas de alineación equivalentes a las de justify-self, pero en el eje y. Los valores
 que se pueden dar son los mismos.*/
-.elm3 {
-  background: #004e92;
-  color: white;
-  justify-self: end;
-  align-self: center;
-  order: 1;
-}
-/*   order: …;
-  Propiedad equivalente al order de flexbox, y que permite cambiar el orden en el que aparece un elemento en un espacio grid. Por defecto todos los elementos tienen un order: 0. Los valores negativos harán que aparezca antes que los elementos cuyo order no se haya alterado, y los valores positivos, después. --> Para más detalles, ver archivo 'solucionado_flexbox.css' en carpeta 3-1.*/
-
 .elemento {
   background-color: rgba(250, 250, 250, 0.8);
   padding: 1em;
@@ -50,3 +40,14 @@ que se pueden dar son los mismos.*/
   font-size: 1.2em;
   line-height: 1.4;
 }
+
+.elm3 {
+  background-color: #004e92;
+  color: white;
+  justify-self: end;
+  align-self: center;
+  order: 1;
+}
+/*   order: …;
+  Propiedad equivalente al order de flexbox, y que permite cambiar el orden en el que aparece un elemento en un espacio grid. Por defecto todos los elementos tienen un order: 0. Los valores negativos harán que aparezca antes que los elementos cuyo order no se haya alterado, y los valores positivos, después. --> Para más detalles, ver archivo 'solucionado_flexbox.css' en carpeta 3-1.*/
+
