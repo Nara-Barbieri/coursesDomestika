@@ -1,0 +1,70 @@
+/*   grid-template-areas: … ;
+  De manera complementaria a las propiedades de grid-template, podemos declarar grid-template-areas para dotar a áreas concretas de un grid con nombres clave. Podemos indicar cuántas columnas o filas ocupa una área repitiendo su nombre varias veces (una por cada columna o fila), y podemos separar cada fila agrupándolas entre comillas. El resultado es bastante visual, lo que ayuda a entender mejor la disposición de las áreas. Además, si dentro de nuestro grid no queremos nombrar un espacio concreto como área, podemos usar un punto (".") para indicar esto y se mostrará como una celda más.*/
+.contenedor {
+  padding: 1em;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  grid-template-areas: "header header header header"
+                       "contenido contenido contenido sidebar"
+                       "contenido contenido contenido sidebar"
+                       ".         .         .         sidebar"
+                       "footer footer footer footer";
+  grid-gap: 20px;
+}
+
+@media (max-width: 600px) {
+  /*.contenedor {
+    grid-template-areas: "header header header header"
+                         "contenido contenido contenido contenido"
+                         "contenido contenido contenido contenido"
+                         "sidebar sidebar sidebar sidebar"
+                         "footer footer footer footer";
+  } --> Esta estrategia se puede simplificar de la siguiente manera:
+  .contenedor {
+    grid-template: repeat(4, 1fr) / 1fr;
+    grid-template-areas: "header"
+                         "contenido"
+                         "sidebar"
+                         "footer";
+  } --> Estas declaraciones funcionan de manera equivalente si, en el archivo html, los divs de clase elm5, elm6 y elm7 están comentados (anulados).*/
+  .contenedor {
+    grid-template: repeat(7, 1fr) / 1fr;
+    grid-template-areas: "header"
+                         "contenido"
+                         " . "
+                         " . "
+                         " . "
+                         "sidebar"
+                         "footer";
+  }
+}/* --> Para incluir los divs de clase elm5 elm6 y elm7 representados en la posición correcta, es necesario adoptar una estrategia para especificar su posición, o se representarán después de los divs de la barra lateral (elm3) y del pie de página (elm4).*/
+
+.elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+/*   grid-area: … ;
+  Propiedad que permite identificar un elemento con una área, y haciendo que el mismo se distribuya conforme a lo designado en la propiedad grid-template-areas.*/
+.elm1 {
+  grid-area: header;
+}
+
+.elm2 {
+  grid-area: contenido;
+}
+
+.elm3 {
+  grid-area: sidebar;
+}
+
+.elm4 {
+  grid-area: footer;
+}
