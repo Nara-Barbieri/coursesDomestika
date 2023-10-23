@@ -1,0 +1,53 @@
+:root {
+  --cols12: repeat(12, minmax(0, 1fr));
+  --gap: 30px;
+}
+
+.contenedor {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: var(--cols12);
+  /* grid-template-columns: repeat(12, minmax(0, 1fr));
+    minmax(0, 1fr)
+    En retículas de anchura flexible, un valor mínimo de 0 asegura que el contenido no modifique las dimensiones del track (y si es el caso, lo sobrepase) --> Por lo tanto, la cuadrícula mantiene todas sus columnas del mismo tamaño (que varía según el navegador).*/
+  grid-gap: var(--gap);
+}
+
+.elemento {
+  background-color: rgba(250, 250, 250, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  color: #004e92;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+.elm1 {
+  grid-column: span 2;
+}
+
+.elm2 {
+  grid-column: span 9;
+}
+
+.elm4 {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: var(--cols12);
+  /*grid-template-columns: repeat(6, minmax(0, 1fr));*/
+  grid-gap: var(--gap);
+  padding: 0;
+}
+
+.sub4 {
+  grid-column: span 3;
+}
+/*   Sistema de retícula anidada
+  La propiedad subgrid, que permitiría pasar unas reglas de alineación de grid a elementos anidados, no está implementada aún en los navegadores. Eso significa que para mantener una retícula general consistente necesitamos replicarla en elementos anidados. Una forma de hacerlo con cierta consistencia es guardar los valores de grid-template en una variable para poder replicarlos fácilmente. Otra forma podría ser usar el valor inherit, es decir, hereda lo que tenga el elemento padre. Por ejemplo, en el caso de que el elemento anidado tenga la misma anchura que el padre, podríamos asignarle al elemento hijo estas propiedades:
+__ {
+  display: grid;
+  grid-template-columns: inherit;
+}*/
