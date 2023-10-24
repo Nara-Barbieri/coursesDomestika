@@ -1,0 +1,17 @@
+/*     position: fixed;
+La propiedad position con el valor fixed funciona de una manera similar a position: absolute, pero toma como referencia la ventana del navegador, no la página, por lo que no se desplaza al hacer scroll. Para posicionarla se usan las propiedades top, bottom, left y/o right.
+    .navegation {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    }*/
+.navegacion {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+/*    position: sticky;
+  La propiedad position con el valor sticky muestra un elemento inicialmente en su posición natural, pero a medida que hagamos scroll, cuando dicho elemento esté a una distancia del borde superior de la ventana del navegador equivalente a la que hayamos dado con la propiedad top, pasará a comportarse como si fuera position:
+fixed. */
