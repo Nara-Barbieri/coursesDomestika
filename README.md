@@ -37,4 +37,11 @@ Content: 'Discover new grids and other ways of designing a website with CSS Shap
     * Grid (and flexbox) in practice
     * _Final project_
   - __The third dimension: depth and effects in scroll__
+    * Introduction to 3D transformations
+    * Fixed headers
+      * Headron header
+      * Scroll header
+      * Sticky header
+    * Animations synchronized with scroll
+    * Inspiration and resources
   - _Final project_
