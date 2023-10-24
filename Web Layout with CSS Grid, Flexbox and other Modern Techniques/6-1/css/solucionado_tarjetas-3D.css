@@ -1,0 +1,42 @@
+/*   Transformaciones 3D
+  Las transformaciones 3D no están pensadas para realizar un modelado 3D complejo (para esto ya existen otras herramientas en la web), sino para añadir pequeñas mejoras a nuestras interfaces. Las funciones de transformación 3D son: rotateX(), rotateY(), rotateZ(), translateZ() y scaleZ(). Estas funciones utilizan el mismo tipo de unidades que sus equivalentes 2D. Además de estas, existen las versiones abreviadas rotate3d(), translate3d() y rotate3d(), que permiten dar los 3 valores de la función (uno por eje), separados por comas.*/
+.contenedor{
+  perspective: 2000px;
+}
+/*   perspective: …; o perspective(…)
+  La perspectiva es necesaria para activar el espacio 3D. Esta perspectiva puede aplicarse a un contenedor para que los elementos en su interior que sean transformados tengan una perspectiva común (emplearíamos entonces la propiedad perspective: … ;) o bien se puede aplicar a un elemento concreto que estemos transformando, a través de la función perspective(…), como una función más en la propiedad transform. La perspectiva se puede marcar en px, y representa la distancia del espectador respecto al elemento transformado. A menor valor, más cerca está el espectador y más dramático es el efecto. 
+    perspective-origin: … …;
+  Podemos controlar el punto de fuga de la perspectiva con esta propiedad, dando valores absolutos o relativos para el eje x e y. Por ejemplo: perspective-origin: 25% 75%;*/
+
+.explorador{
+  position: relative;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
+}
+/*     transform-style: preserve-3d;
+  Esta propiedad permite que los descendientes de un elemento que reciba una transformación 3D la hereden también, y se comporten de una manera coherente a esta transformación, en vez de quedar "planos" respecto al elemento transformado. */
+
+.explorador.descubierto{
+  transform: rotateY(180deg);
+}
+
+.explorador__imagen{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.explorador__contenido{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(250, 250, 250);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+/*     backface-visibility: hidden;
+  Cuando damos la vuelta a un elemento para mostrar su cara trasera u oculta (como en el caso de rotateY()), al ser la web un entorno no preparado por defecto para el 3D, vemos el mismo elemento al revés. Podemos anular este efecto utilizando la propiedad backface-visibility: hidden, a partir de la cual el elemento queda oculto al ser volteado. Sin embargo, es conveniente que haya otro elemento (previamente volteado y con su propio backface-visibility: hidden) que aparezca a continuación, si lo que queremos es conseguir un efecto de tarjeta con dos caras. */
