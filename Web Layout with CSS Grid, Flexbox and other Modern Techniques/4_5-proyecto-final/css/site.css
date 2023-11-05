@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,600i,800");
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 * {
   box-sizing: border-box;
@@ -17,10 +17,10 @@ html {
 body {
   min-height: 100%;
   color: #333333;
-  font: 1.4em/1.8 "EB Garamond", serif;
+  font-family:'Questrial', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to top, #2980b9, #6dd5fa);
+  background: linear-gradient(to top, #ffff, #fafafa);
 }
 
 @media (max-width: 37.5rem) {
@@ -33,5 +33,4 @@ h1 {
   line-height: 1;
   font-weight: 600;
   font-style: italic;
-  opacity: 0.75;
 }

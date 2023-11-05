@@ -1,16 +1,114 @@
 .contenedor {
   padding: 1em;
-  /* display: grid; */
+  display: grid;
+  grid-template: repeat(12, minmax(autofill, 1fr)) / repeat(3, 1fr);
+  grid-gap: 5px;
+  grid-template-areas: "header header header header header header header header header header header header"
+                       "SD1 conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo SD2"
+                       "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 .elemento {
   background-color: rgba(250, 250, 250, 0.8);
   padding: 1em;
-  border-radius: 10px;
   text-align: center;
-  color: #004e92;
-  font-weight: 600;
-  font-style: italic;
+  color: #28292a;
   font-size: 1.2em;
   line-height: 1.4;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.elm1 {
+  grid-area: header;
+}
+
+.elm2 {
+  grid-area: SD1;
+  text-align: left;
+  opacity: 0.75;
+}
+
+ul {
+  padding: 0.5em;
+}
+
+.elm3 {
+  grid-area: conteúdo;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.PANC1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.PANC {
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.PANC_imagen {
+  overflow: hidden;
+  border-radius: 10px;
+  display: block;
+  opacity: 0.9;
+  filter: grayscale(20%);
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.PANC_nome { 
+  position: absolute;
+  bottom: 0;
+  padding: 0.1em;
+  margin: 0;
+  color: #fafafa;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.PANC_nome a {
+  color: #fafafa;
+}
+
+a {
+  color: #28292a;
+}
+
+a:hover {
+  color: #000428;
+}
+
+.elm4 {
+  grid-area: SD2;
+  text-align: left;
+  opacity: 0.75;
+}
+
+.elm5 {
+  grid-area: footer;
+  text-align: left;
+  opacity: 0.75;
+}
+
+@media (max-width: 37.5rem) {
+body {
+  .contenedor {
+    grid-template: 1fr / 1fr;
+    grid-template-areas: "header"
+                         "SD1"
+                         "conteúdo"
+                         "SD2"
+                         "footer";
+    font-size: 0.7em;
+  }
+  .PANC_nome {
+    font-size: 0.5em;
+  }
 }
